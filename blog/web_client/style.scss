@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'bootstrapmain';
+
+h1 a {
+  color: $gray-dark;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.content {
+  position: relative;
+  perspective: 600px;
+  transform-origin: center;
+}
+.page {
+  &-leave, &-enter {
+    transition: all 0.5s ease;
+  }
+  &-leave {
+    transform: translateX(0px) rotateY(0deg);
+    &-active {
+      transform: translateX(-600px) rotateY(-45deg);
+    }
+  }
+  &-enter {
+    transform: translateX(600px) rotateY(45deg);
+    position: absolute;
+    &-active {
+      transform: translateX(0px) rotateY(0deg);
+    }
+  }
+}
